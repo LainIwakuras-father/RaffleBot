@@ -1,14 +1,15 @@
 import asyncio
 import logging
-from src.core.utils.logger_config import loggerConfig
-from src.handlers import router as main_router
-from create_bot import dp, bot
 
+from bot.core.utils.logger_config import loggerConfig
+from bot.handlers import router as main_router
+from create_bot import bot, dp
 
 logging.basicConfig(
     level=loggerConfig.level,
     format=loggerConfig.format,
 )
+
 
 async def main():
     try:
@@ -17,6 +18,7 @@ async def main():
         await dp.start_polling(bot)
     except Exception as ex:
         logging.error(f"Ошибка при запуске: {ex}")
+
 
 if __name__ == "__main__":
     # Base.metadata.create_all(bind=engine)
