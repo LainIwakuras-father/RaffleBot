@@ -1,7 +1,7 @@
 from aiogram.types import (InlineKeyboardButton, InlineKeyboardMarkup,
                            WebAppInfo)
 
-from create_bot import WEBAPP_URL
+from bot.create_bot import WEBAPP_URL
 
 
 def create_raffle_kbs():

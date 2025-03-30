@@ -3,7 +3,7 @@ import logging
 
 from bot.core.utils.logger_config import loggerConfig
 from bot.handlers import router as main_router
-from create_bot import bot, dp
+from bot.create_bot import bot, dp
 
 logging.basicConfig(
     level=loggerConfig.level,

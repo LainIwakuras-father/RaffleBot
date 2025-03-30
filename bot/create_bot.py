@@ -5,6 +5,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 
+# лоадим переменные окружения из файла .env 
 load_dotenv()
 TOKEN = os.getenv("TOKEN", "")
 ADMIN_ID = os.getenv("ADMIN_ID", "")
