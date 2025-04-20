@@ -3,3 +3,5 @@
 .postgres
 tests
 README.md
+__pycache__
+.git
