@@ -1,24 +1,17 @@
 FROM python:3.12-slim
 
+ENV PYTHONDONTWRITEBYTECODE=1
+
 ENV PYTHONUNBUFFERED=1 
 
-# Устанавливаем системные зависимости
-RUN apt-get update && apt-get install -y \
-    curl \
-    build-essential \
-    git \
-    && rm -rf /var/lib/apt/lists/*
-
-
-RUN curl -sSL https://install.python-poetry.org | python3 -
-ENV PATH="/root/.local/bin:$PATH"
+LABEL "Creator"="Uriy Dolewsky"
+RUN pip install --update pip
 
 WORKDIR /app
+COPY requirements.txt /app/requirements.txt
 
-COPY pyproject.toml poetry.lock* /app/
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-RUN poetry install --only main --no-root --no-interaction --verbose
+COPY . .
 
-COPY . /app
-
-# CMD ["python", "main.py"]
+# CMD [ "python", "main.py" ]
