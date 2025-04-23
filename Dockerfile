@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1 
 
 LABEL "Creator"="Uriy Dolewsky"
-RUN pip install --update pip
+
 
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
